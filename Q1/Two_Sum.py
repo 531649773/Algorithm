@@ -9,12 +9,12 @@ __author__ = 'Ziyan'
 
 import sys
 
-def two_sum_mostslow(nums, tar):
+def two_sum_mostslow(nums, tar) :
 	upper = len(nums)
 	flag = False
-	for i in range(upper-1):
-		for j in range(i,upper):
-			summa = nums[i]+nums[j]
+	for i in range(upper-1) :
+		for j in range(i,upper) :
+			summa = nums[i] + nums[j]
 			if summa == tar :
 				flag = True
 				break
@@ -22,27 +22,27 @@ def two_sum_mostslow(nums, tar):
 			break
 	return [i,j]
 
-def two_sum_slow(nums, tar):
+def two_sum_slow(nums, tar) :
 	upper = len(nums)
 	index = list(range(upper))
 	dic={}
-	for i in range(upper):
+	for i in range(upper) :
 		dic[i] = nums[i]
 	print(dic)
-	for i in range(upper):
+	for i in range(upper) :
 		dic.pop(i)
 		res = tar - nums[i]
 		j = dic.get(res)
-		if j != None:
+		if j != None :
 			return [i,j]
 			break
 	return [-1,-1]
 
-def twoSum(nums, target):
+def twoSum(nums, target) :
         #set up an empty dictionary
         d = {}
         #run all possible number in the list and store them as a key in the dictionary
-        for i in range(len(nums)):
+        for i in range(len(nums)) :
         	res = target - nums[i]
         	try :
         		ans = [d[res],i]
