@@ -3,7 +3,7 @@
 
 ' Leetcode Q3 '
 
-__author__ = 'Ziyan Zhu'
+__author__ = 'Ziyan'
 
 #Given a string, find the length of the longest substring without repeating characters.
 
@@ -24,7 +24,7 @@ def longest_substring(string):
 	return Distance
 
 if __name__ == '__main__':
-	print('Enter some letters')
+	print('Enter some letters:')
 	string = input()
 	print(longest_substring(string))
 		
