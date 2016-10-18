@@ -30,14 +30,14 @@ def palindromic_Manacher(s):
 
 	P = [0] * len(S)
 	MR, pos, Maxlen = 0, 0, 0
-	for i in range(1,len(S)) :
+	for i in range(0,len(S)) :
 
 		if i < MR :
 			P[i] = min(P[2*pos - i], 2*(MR - i)+1)
 		else :
 			P[i] = 1
 
-		while i-P[i]//2 >=0 and i+P[i]//2 < len(S) and S[i-P[i]//2] == S[i+P[i]//2]:
+		while i-P[i]//2 >0 and i+P[i]//2 < len(S)-1 and S[i-P[i]//2] == S[i+P[i]//2]:
 			P[i] += 2
 
 		if P[i]//2 + i -1 > MR :
@@ -46,7 +46,7 @@ def palindromic_Manacher(s):
 
 		if P[i] > Maxlen :
 			Maxlen = P[i]
-			Maxsubstr = S[i-Maxlen//2 +2: i+ Maxlen//2 : 2]
+			Maxsubstr = S[i-Maxlen//2 +1 : i+ Maxlen//2 : 2]
 
 		#Maxlen = max(Maxlen,P[i])
 
