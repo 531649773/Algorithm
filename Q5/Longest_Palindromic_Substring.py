@@ -46,8 +46,9 @@ def palindromic_Manacher(s):
 
 		if P[i] > Maxlen :
 			Maxlen = P[i]
-			Maxsubstr = S[i-Maxlen//2 +1 : i+ Maxlen//2 : 2]
-
+			center = i
+			
+	Maxsubstr = S[center-Maxlen//2 +1 : center+ Maxlen//2 : 2]
 		#Maxlen = max(Maxlen,P[i])
 
 	return Maxsubstr, len(Maxsubstr)
