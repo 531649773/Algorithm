@@ -18,15 +18,16 @@ def shortest_palindromic(s):
 
 	P = [0] * len(S)
 	MR, pos, Maxlen = 0, 0, 0
-	for i in range(0,len(S)) :
+	for i in range(0,len(S)//2+1) :
 
 		if i < MR :
 			P[i] = min(P[2*pos - i], 2*(MR - i)+1)
 		else :
 			P[i] = 1
 
-		while i-P[i]//2 >0 and i+P[i]//2 < len(S)-1 and S[i-P[i]//2] == S[i+P[i]//2]:
-			P[i] += 2
+		if S[2*i-1] == S[1] :
+			while i-P[i]//2 >0 and i+P[i]//2 < len(S)-1 and S[i-P[i]//2] == S[i+P[i]//2]:
+				P[i] += 2
 
 		if P[i]//2 + i -1 > MR :
 			MR = P[i]//2 + i - 1
@@ -41,7 +42,7 @@ def shortest_palindromic(s):
 	#Maxsubstr = S[temp_center-temp_len//2 +1 : temp_center+ temp_len//2 : 2]
 	res = S[temp_len:: 2]
 	res = res[::-1]
-	return res+s
+	return res
 
 
 
