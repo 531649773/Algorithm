@@ -12,7 +12,8 @@ __author__ = 'Ziyan'
 import sys
 
 def shortest_palindromic(s):
-
+	#adopt the idea from find the longest palindromic substring(LPS)
+	#find the LPS with the left element is the same as the very left element of the input string
 	S = '#' + '#'.join(s) + '#'
 
 	P = [0] * len(S)
